@@ -25,6 +25,6 @@ public class OptiFineCITPatchPluginLate implements ILateMixinLoader {
 
     @Override
     public List<String> getMixinConfigs() {
-        return Collections.singletonList("mixins.optifinecitpatch.optifine.json");
+        return isOptiFineLoaded() ? Collections.singletonList("mixins.optifinecitpatch.optifine.json") : Collections.emptyList();
     }
 }
