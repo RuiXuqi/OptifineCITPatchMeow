@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
         modid = OptiFineCITPatch.MODID,
         version = OptiFineCITPatch.VERSION,
         name = OptiFineCITPatch.NAME,
-        dependencies = "required-after:mixinbooter",
+        dependencies = "required-after:mixinbooter;required-after:configanytime",
         acceptableRemoteVersions = "*"
 )
 public class OptiFineCITPatch {

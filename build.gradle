@@ -56,6 +56,7 @@ dependencies {
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
     implementation ("zone.rong:mixinbooter:10.6") { transitive = false }
     annotationProcessor ("zone.rong:mixinbooter:10.6") { transitive = false }
+    implementation "com.cleanroommc:configanytime:3.0"
 
     implementation fg.deobf("net.optifine:optifine:1.12.2-HD_U_G5_unpatched_srg")
 }

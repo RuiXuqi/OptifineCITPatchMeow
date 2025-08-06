@@ -1,5 +1,6 @@
 package optifinecitpatch;
 
+import com.cleanroommc.configanytime.ConfigAnytime;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -25,6 +26,10 @@ public class ConfigHandler {
     @Config.Comment("Fixes CITs breaking completely if an enchantment couldn't be found.")
     @Config.Name("Fix Missing Enchantment")
     public static boolean fixMissingEnchantment = true;
+
+    static {
+        ConfigAnytime.register(ConfigHandler.class);
+    }
 
     @SubscribeEvent
     public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
