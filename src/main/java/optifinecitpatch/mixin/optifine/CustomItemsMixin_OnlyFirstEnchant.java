@@ -7,6 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagList;
 import net.optifine.CustomItems;
+import optifinecitpatch.ConfigHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -18,7 +19,7 @@ public abstract class CustomItemsMixin_OnlyFirstEnchant {
     )
     private static int optifinecitpatch_onlyCheckFirstEnchant(NBTTagList instance, Operation<Integer> original, @Local(argsOnly = true) ItemStack stack){
         int actualCount = original.call(instance);
-        if(stack.getItem() == Items.ENCHANTED_BOOK && actualCount > 0) return 1; //Only check first enchant on book
+        if(ConfigHandler.onlyFirstEnchant && stack.getItem() == Items.ENCHANTED_BOOK && actualCount > 0) return 1; //Only check first enchant on book
         return actualCount;
     }
 }

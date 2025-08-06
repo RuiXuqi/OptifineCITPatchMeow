@@ -46,6 +46,7 @@ repositories {
     flatDir { dirs 'libs' }
     maven { url = 'https://www.cursemaven.com' }
     maven { url = 'https://ecdcaeb.github.io/maven/' }
+    maven { url = 'https://maven.cleanroommc.com' }
 }
 
 dependencies {
@@ -53,10 +54,9 @@ dependencies {
 
     implementation "org.spongepowered:mixin:${mixin_version}"
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
-    implementation "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
-    annotationProcessor "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
+    implementation ("zone.rong:mixinbooter:10.6") { transitive = false }
+    annotationProcessor ("zone.rong:mixinbooter:10.6") { transitive = false }
 
-    implementation fg.deobf("curse.maven:fermiumbooter-${fermiumbooter_version}")
     implementation fg.deobf("net.optifine:optifine:1.12.2-HD_U_G5_unpatched_srg")
 }
 
@@ -71,7 +71,8 @@ processResources {
             'version': mod_version,
             'mcversion': minecraft_version,
             'mod_description': mod_description,
-            'mod_author': mod_author
+            'mod_author': mod_author,
+            'mod_url': mod_url
     ]
 
     inputs.properties replaceProperties

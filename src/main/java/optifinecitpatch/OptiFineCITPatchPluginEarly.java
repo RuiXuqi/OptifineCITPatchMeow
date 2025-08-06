@@ -1,15 +1,16 @@
 package optifinecitpatch;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import org.spongepowered.asm.launch.MixinBootstrap;
+import zone.rong.mixinbooter.IEarlyMixinLoader;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-public class OptiFineCITPatchPlugin implements IFMLLoadingPlugin {
+public class OptiFineCITPatchPluginEarly implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
-	public OptiFineCITPatchPlugin() {
-		MixinBootstrap.init();
+	public OptiFineCITPatchPluginEarly() {
 	}
 
 	@Override
@@ -37,5 +38,10 @@ public class OptiFineCITPatchPlugin implements IFMLLoadingPlugin {
 	public String getAccessTransformerClass()
 	{
 		return null;
+	}
+
+	@Override
+	public List<String> getMixinConfigs() {
+		return Collections.singletonList("mixins.optifinecitpatch.vanilla.json");
 	}
 }

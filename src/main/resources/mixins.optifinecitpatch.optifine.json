@@ -1,12 +1,14 @@
 {
   "required": true,
-  "package": "optifinecitpatch.mixin",
+  "package": "optifinecitpatch.mixin.optifine",
   "refmap": "mixins.optifinecitpatch.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "mixins": [
-    "optifine.CustomItemsMixin_OnlyFirstEnchant"
+    "CustomItemsMixin_OnlyFirstEnchant",
+    "ParserEnchantmentIdMixin",
+    "CustomItemsMixin_LogSpam"
   ],
   "injectors": {
     "maxShiftBy": 10

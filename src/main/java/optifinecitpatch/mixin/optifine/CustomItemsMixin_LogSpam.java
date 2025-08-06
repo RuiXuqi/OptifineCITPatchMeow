@@ -2,6 +2,7 @@ package optifinecitpatch.mixin.optifine;
 
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.optifine.CustomItems;
+import optifinecitpatch.ConfigHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -14,6 +15,6 @@ public abstract class CustomItemsMixin_LogSpam {
             remap = false
     )
     private static boolean optifinecitpatch_disableLogSpam(String s) {
-        return false;
+        return !ConfigHandler.removeLogSpam;
     }
 }
