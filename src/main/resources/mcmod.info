@@ -5,11 +5,11 @@
     "description": "${mod_description}",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "",
-    "updateUrl": "https://www.curseforge.com/members/nischhelm/projects",
+    "url": "${mod_url}",
+    "updateUrl": "",
     "authorList": ${mod_author},
-  "credits": "",
-  "logoFile": "",
-  "dependencies": []
+    "credits": "",
+    "logoFile": "",
+    "dependencies": []
   }
 ]
