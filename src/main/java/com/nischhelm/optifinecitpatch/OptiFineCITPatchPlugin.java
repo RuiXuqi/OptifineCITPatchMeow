@@ -1,4 +1,4 @@
-package optifinecitpatch;
+package com.nischhelm.optifinecitpatch;
 
 import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;

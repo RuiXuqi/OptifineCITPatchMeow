@@ -1,4 +1,4 @@
-package optifinecitpatch;
+package com.nischhelm.optifinecitpatch;
 
 import com.cleanroommc.configanytime.ConfigAnytime;
 import net.minecraftforge.common.config.Config;

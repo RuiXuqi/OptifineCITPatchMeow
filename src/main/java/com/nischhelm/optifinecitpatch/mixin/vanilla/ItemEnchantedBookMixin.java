@@ -1,4 +1,4 @@
-package optifinecitpatch.mixin.vanilla;
+package com.nischhelm.optifinecitpatch.mixin.vanilla;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.item.ItemEnchantedBook;
