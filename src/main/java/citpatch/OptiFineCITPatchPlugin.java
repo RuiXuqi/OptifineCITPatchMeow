@@ -1,16 +1,23 @@
 package citpatch;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import org.spongepowered.asm.launch.MixinBootstrap;
+import zone.rong.mixinbooter.IEarlyMixinLoader;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-public class OptiFineCITPatchPlugin implements IFMLLoadingPlugin {
+public class OptiFineCITPatchPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
-	public OptiFineCITPatchPlugin() {
-		MixinBootstrap.init();
-	}
+    @Override
+    public List<String> getMixinConfigs() {
+        List<String> mixins = new ArrayList<>();
+        if (ConfigHandler.removeGlint) {
+            mixins.add("mixins.optifinecitpatch.glint.json");
+        }
+        return mixins;
+    }
 
 	@Override
 	public String[] getASMTransformerClass()
